@@ -1,4 +1,15 @@
-Maze_solver
-===========
+grimly_42
+======
 
-Maze solver in C. test/optimisation/multi-thread/shared memory
+HOW TO
+======
+perl test/gen.perl 100 100 10 > test_file && ./grimly test/test_file
+
+MADE
+======
+? hours/ home
+
+--------------------------
+< Made by la Meuh >
+--------------------------
+
