@@ -9,7 +9,11 @@ MADE
 ======
 ? hours/ home
 
---------------------------
+TODO
+======
+-Add heuristic (dist + vol oiseau a end > C_END ?)
+- fork for end
+
 < Made by la Meuh >
 --------------------------
 
