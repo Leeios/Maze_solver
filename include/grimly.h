@@ -2,7 +2,6 @@
 #define GRIMLY_H
 
 #define BUFF_SIZE 1023
-#define MAX_INT 246000000
 #define ABS(n) ((n) > 0 ? (n) : -(n))
 #define ISNBR(n) (n >= '0' && n <= '9')
 #define ISVALID(n) (n == m->symbols[0] || n == m->symbols[1] || n == m->symbols[2] || n == m->symbols[3])
@@ -20,9 +19,7 @@
 #define WALL 2
 #define PATH -2
 #define DIST_0 3
-
 # include <stdlib.h>
-# include <stdio.h>
 
 /*
 **Order of symbols

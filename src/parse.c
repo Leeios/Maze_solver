@@ -24,7 +24,7 @@ static int	check_map(t_data *m, char **s, int *i, int *j)
 	}
 	if (*i >= m->size[0] || !(**s) || **s == '\n')
 		return (1);
-	ft_exit(!(ISVALID(**s)), "map error");
+	ft_exit(!(ISVALID(**s)), "map error: wrong symbol");
 	return (0);
 }
 
@@ -70,10 +70,12 @@ static void	convert_map(char *s, t_data *m)
 void		parse(char *s, t_data *m)
 {
 	ft_exit(!ISNBR(s[0]), "map error: No lines number");
+	m->start[0] = -1;
+	m->end[0] = -1;
 	m->size[0] = ft_uatoi(&s);
 	m->size[1] = 0;
-	ft_exit(!s[0] || !s[1] || !s[2] || !s[3] || !s[4]
-		|| s[5] != '\n', "map error: Not enough symbols");
+	ft_exit(!s[0] || !s[1] || !s[2] || !s[3] || !s[4] || s[5] != '\n'
+		, "map error: Not enough symbols");
 	m->symbols[0] = s[0];
 	m->symbols[1] = s[1];
 	m->symbols[2] = s[2];
@@ -83,4 +85,6 @@ void		parse(char *s, t_data *m)
 	while (s[m->size[1]] && s[m->size[1]] != '\n')
 		m->size[1]++;
 	convert_map(s, m);
+	ft_exit((m->start[0] == -1 || m->end[0] == -1)
+		, "map error: no start or end");
 }

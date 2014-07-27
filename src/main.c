@@ -52,6 +52,7 @@ static void	search_path(t_data *m)
 	m->current[1] = m->start[1];
 	m->dist = 3;
 	recursive_path(m);
+	ft_exit(C_END == END, "map error: no solution");
 	m->current[0] = m->end[0];
 	m->current[1] = m->end[1];
 	recursive_fill(m);
