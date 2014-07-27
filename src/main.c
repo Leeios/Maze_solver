@@ -21,7 +21,7 @@ static char	*ft_read(char *filename)
 
 static void	recursive_fill(t_data *m)
 {
-	if (C_CUR <= DIST_0 || m->dist == MAX_INT)
+	if (C_CUR <= DIST_0)
 		return ;
 	C_CUR = PATH;
 	if (m->current[0] && C_UP == C_CUR - 1)

@@ -34,7 +34,7 @@ static void	heuristic_direction(t_data *m)
 {
 	if (ABS(m->current[0] - m->end[0]) > ABS(m->current[1] - m->end[1]))
 	{
-		if (m->current[0] - m->end[0] > 0)
+		if (m->current[0] - m->end[0] < 0)
 		{
 			if (m->current[1] - m->end[1] > 0)
 				dir_dlru(m);

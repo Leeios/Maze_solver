@@ -38,14 +38,13 @@ void		print_map_int(t_data *m)
 	int i, j;
 	i = j = -1;
 
-	m->map[m->start[0]][m->start[1]] = START;
-	m->map[m->end[0]][m->end[1]] = END;
+	// m->map[m->start[0]][m->start[1]] = START;
+	// m->map[m->end[0]][m->end[1]] = END;
 	while (++i < m->size[0])
 	{
 		j = -1;
 		while (++j < m->size[1])
-			printf("%d_", m->map[i][j]);
+			printf("%d\t", m->map[i][j]);
 		printf("\n");
 	}
 }
-
