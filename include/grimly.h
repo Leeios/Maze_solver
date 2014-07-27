@@ -12,6 +12,7 @@
 #define C_UP m->map[m->current[0] - 1][m->current[1]]
 #define C_DOWN m->map[m->current[0] + 1][m->current[1]]
 #define C_END m->map[m->end[0]][m->end[1]]
+#define CROW_FLY (ABS(m->current[0] - m->end[0]) + ABS(m->current[1] - m->end[1]))
 #define TRACE "/"
 #define START -1
 #define END 1
@@ -69,7 +70,6 @@ void	dir_drlu(t_data *m);
 **DISPLAY
 */
 void	print_map(t_data *m);
-void	print_map_int(t_data *m);
 
 /*
 **LIBFT

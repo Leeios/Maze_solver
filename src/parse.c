@@ -7,7 +7,7 @@ static void	ft_init_map(t_data *m)
 	i = -1;
 	ft_exit((m->map = (int **)malloc(sizeof(int *) * m->size[0])) == NULL
 		, "malloc error");
-	while (++i < m->size[1])
+	while (++i < m->size[0])
 		ft_exit((m->map[i] = (int *)malloc(sizeof(int) * m->size[1])) == NULL
 			, "malloc error");
 }
@@ -24,7 +24,7 @@ static int	check_map(t_data *m, char **s, int *i, int *j)
 	}
 	if (*i >= m->size[0] || !(**s) || **s == '\n')
 		return (1);
-	ft_exit(!(ISVALID(**s)), "map error: valid char");
+	ft_exit(!(ISVALID(**s)), "map error");
 	return (0);
 }
 

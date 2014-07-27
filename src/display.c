@@ -32,19 +32,3 @@ void		print_map(t_data *m)
 		ft_exit(0 > write(1, "\n", 1), "Writing error");
 	}
 }
-
-void		print_map_int(t_data *m)
-{
-	int i, j;
-	i = j = -1;
-
-	// m->map[m->start[0]][m->start[1]] = START;
-	// m->map[m->end[0]][m->end[1]] = END;
-	while (++i < m->size[0])
-	{
-		j = -1;
-		while (++j < m->size[1])
-			printf("%d\t", m->map[i][j]);
-		printf("\n");
-	}
-}

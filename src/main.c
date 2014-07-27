@@ -21,17 +21,28 @@ static char	*ft_read(char *filename)
 
 static void	recursive_fill(t_data *m)
 {
-	if (C_CUR <= DIST_0)
-		return ;
-	C_CUR = PATH;
-	if (m->current[0] && C_UP == C_CUR - 1)
-		m->current[0]--;
-	else if (m->current[0] < m->size[1] - 1 && C_LEFT == C_CUR - 1)
-		m->current[0]++;
-	else if (m->current[1] && C_LEFT == C_CUR - 1)
+	if (m->current[1]  && C_LEFT == C_CUR - 1)
+	{
+		C_CUR = PATH;
 		m->current[1]--;
-	else if (m->current[1] < m->size[0] - 1 && C_RIGHT == C_CUR - 1)
+	}
+	else if (m->current[0] && C_UP == C_CUR - 1)
+	{
+		C_CUR = PATH;
+		m->current[0]--;
+	}
+	else if (m->current[1] < m->size[1] && C_RIGHT == C_CUR - 1)
+	{
+		C_CUR = PATH;
 		m->current[1]++;
+	}
+	else if (m->current[0] < m->size[0] && C_DOWN == C_CUR - 1)
+	{
+		C_CUR = PATH;
+		m->current[0]++;
+	}
+	else
+		return ;
 	recursive_fill(m);
 }
 
@@ -41,7 +52,6 @@ static void	search_path(t_data *m)
 	m->current[1] = m->start[1];
 	m->dist = 3;
 	recursive_path(m);
-	print_map_int(m);
 	m->current[0] = m->end[0];
 	m->current[1] = m->end[1];
 	recursive_fill(m);
